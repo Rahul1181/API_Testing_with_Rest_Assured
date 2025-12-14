@@ -1,0 +1,27 @@
+# Maven
+target/
+*.log
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# IDE - VS Code
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test reports
+test-output/
+allure-results/
+
+#Intellj files
+*.iml
+.idea/
