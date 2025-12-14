@@ -14,10 +14,11 @@
     <maven.compiler.target>21</maven.compiler.target>
     <maven.compiler.release>21</maven.compiler.release>
     <cucumber.version>7.32.0</cucumber.version>
-    <selenium.version>4.38.0</selenium.version>
   </properties>
   <build>
     <plugins>
+
+    <!-- COMPILER PLUGIN -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -26,17 +27,19 @@
           <release>21</release>
         </configuration>
       </plugin>
+
+      <!-- 🔥 TEST EXECUTION PLUGIN (THIS IS WHERE IT GOES) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.2.5</version>
         <configuration>
-          <includes>
-            <include>**/RunCucumberTest.java</include>
-          </includes>
-          <testFailureIgnore>false</testFailureIgnore>
+          <suiteXmlFiles>
+            <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
         </configuration>
       </plugin>
+      
     </plugins>
   </build>
 
