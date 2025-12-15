@@ -20,6 +20,11 @@
 ## Helpful Tools
 - [JSON Path Finder](https://jsonpathfinder.com/)
 
+## Maven Dependencies
+- io.rest-assured
+- org.testng
+- com.googlecode.json-simple
+
 ## Website for Testing
 - [Dev community](https://dev.to/mdmoeenajazkhan/api-testing-demo-site-1ef5)
 - [Reqres](https://reqres.in/)
