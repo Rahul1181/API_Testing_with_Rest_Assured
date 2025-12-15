@@ -19,6 +19,23 @@
 
 ## Website for Testing
 - [Dev community](https://dev.to/mdmoeenajazkhan/api-testing-demo-site-1ef5)
+- [Reqres](https://reqres.in/)
+
+## How to set API key in REQRES in Windows?
+- Create an account in [Reqres](https://reqres.in/)
+- Go to [API Key](https://app.reqres.in/api-keys)
+- Create New API key and give this a name 
+- Copy the API key and save it in local
+- Open CMD and paste the following command
+    - `setx REQ_RES_API_KEY="**YOUR_API_KEY**"`
+- Close CMD and rerun
+- Use command `echo %REQ_RES_API_KEY%` and check if you get your API key
+- Now create a "EnvironmentConfig.java" file and add the details of API Key in it
+- And all set!!
+
+
+
+
 
 
 
