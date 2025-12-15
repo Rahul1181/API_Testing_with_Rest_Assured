@@ -3,11 +3,6 @@ package api_testing.Reqres;
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.swing.text.AbstractDocument.Content;
-
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
 
