@@ -2,8 +2,8 @@
 <suite name="API Test Suite">
   <test name="API Tests">
     <classes>
-      <class name="api_testing.AppTest"/>
-      <class name="api_testing.Reqres.GetDataTest"/>
+      <class name="api_testing.restfulBooker.BookingDataTest"/>
+      <!--<class name="api_testing.Reqres.GetDataTest"/> -->
     </classes>
   </test>
 </suite>
