@@ -17,6 +17,9 @@
 - Dependency Management Tool - *Maven*
 - Framework - *TestNG*
 
+## Helpful Tools
+- [JSON Path Finder](https://jsonpathfinder.com/)
+
 ## Website for Testing
 - [Dev community](https://dev.to/mdmoeenajazkhan/api-testing-demo-site-1ef5)
 - [Reqres](https://reqres.in/)
@@ -32,6 +35,7 @@
 - Use command `echo %REQ_RES_API_KEY%` and check if you get your API key
 - Now create a "EnvironmentConfig.java" file and add the details of API Key in it
 - And all set!!
+
 
 
 
