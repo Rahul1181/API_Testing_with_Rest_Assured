@@ -6,26 +6,46 @@ import org.testng.annotations.Test;
 import api_testing.config.EnvironmentConfig;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+
+import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.*;
 
 public class GetDataTest {
     @Test
-    public void userData() {
+    //Method name is based on the endpoint result
+    public void getListOfUsers() {
         // 2 ways to Stores the response
-        // Response userInfo = RestAssured.get("https://reqres.in/api/users?page=2");
+        // Response usersList = RestAssured.get("https://reqres.in/api/users?page=2");
 
         // Fluent way to Stores the response
-        Response userInfo = (Response) given()
+        Response usersList = (Response) given()
                 .header("x-api-key", EnvironmentConfig.getReqresApiKey())
                 .when().get("https://reqres.in/api/users?page=2");
 
-        System.out.println("Status code is :" + userInfo.getStatusCode());
-        System.out.println("Time taken to find the data: " + userInfo.getTime());
-        System.out.println("Response body is :" + userInfo.getBody().asString());
-        System.out.println("Header Details : " + userInfo.getHeader("content-type"));
+        System.out.println("Status code is :" + usersList.getStatusCode());
+        System.out.println("Time taken to find the data: " + usersList.getTime());
+        System.out.println("Response body is :" + usersList.getBody().asString());
+        System.out.println("Header Details : " + usersList.getHeader("content-type"));
 
-        int statusCode = userInfo.getStatusCode();
+        int statusCode = usersList.getStatusCode();
         Assert.assertEquals(statusCode, 200);
+
+    }
+    @Test
+    public void getSingleUser(){
+        //To stop redundent website link
+        baseURI = "https://reqres.in/api/";
+
+        //Validates the status code
+        given().header("x-api-key", EnvironmentConfig.getReqresApiKey()).get("users/2")
+        .then().statusCode(200);
+
+        //Validate the first_name of the user and getting all the logs
+        given().header("x-api-key", EnvironmentConfig.getReqresApiKey()).get("users/2")
+        .then().body("data.first_name", equalTo("Janet")).log().all();
+
+
 
     }
 
