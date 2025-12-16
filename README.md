@@ -48,6 +48,7 @@
 - Run cmd as Administrator and paste the cmd : `npm install -g json-server@0.17.4` -> Install the JSON Server in local
 - Then paste " `json-server --watch db.json` -> Starts the JSON server
 - You will have *db.json* created in the directory where you ran the cmd command
+- Copy and paste the local host URL: `http://localhost:3000/`
 - Now run and enjoy
 
 
