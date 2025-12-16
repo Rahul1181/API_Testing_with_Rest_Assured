@@ -41,6 +41,15 @@
 - Now create a "EnvironmentConfig.java" file and add the details of API Key in it
 - And all set!!
 
+## Local Server Setup
+- Check if you have npm and node.js package installed in cmd and if not then install it
+    - `npm -v` -> Check the npm version
+    - `node -v`-> Check the node.js version
+- Run cmd as Administrator and paste the cmd : `npm install -g json-server@0.17.4` -> Install the JSON Server in local
+- Then paste " `json-server --watch db.json` -> Starts the JSON server
+- You will have *db.json* created in the directory where you ran the cmd command
+- Now run and enjoy
+
 
 
 
