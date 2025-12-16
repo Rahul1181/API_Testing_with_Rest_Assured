@@ -34,10 +34,6 @@ public class PostDataTest {
             .post("users")
         .then()
             .statusCode(201).log().all();
-
-
-
-
     }
 
 }
