@@ -25,3 +25,6 @@ allure-results/
 #Intellj files
 *.iml
 .idea/
+
+# API secrets
+src/test/java/api_testing/config/config.properties
