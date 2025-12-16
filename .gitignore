@@ -27,4 +27,4 @@ allure-results/
 .idea/
 
 # API secrets
-src/test/java/api_testing/config/config.properties
+*config.properties
