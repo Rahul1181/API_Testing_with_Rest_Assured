@@ -1,6 +1,6 @@
 package api_testing.Reqres;
 
-import static io.restassured.RestAssured.baseURI;
+
 import static io.restassured.RestAssured.given;
 
 import org.json.simple.JSONObject;
@@ -16,8 +16,6 @@ public class PostDataTest {
         // newUserData.put("name", "Rahul");
         // newUserData.put("job", "private employee");
 
-        baseURI ="https://reqres.in/api/";
-
         //JSON format
         JSONObject jsonFormat = new JSONObject();
         jsonFormat.put("name", "Rahul");
@@ -31,7 +29,7 @@ public class PostDataTest {
             .accept(ContentType.JSON)
             .body(jsonFormat.toJSONString())
         .when()
-            .post("users")
+            .post(EnvironmentConfig.getBaseUri() + "users")
         .then()
             .statusCode(201).log().all();
     }

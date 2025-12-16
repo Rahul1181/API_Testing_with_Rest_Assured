@@ -1,6 +1,6 @@
 package api_testing.Reqres;
 
-import static io.restassured.RestAssured.baseURI;
+
 import static io.restassured.RestAssured.given;
 
 import org.json.simple.JSONObject;
@@ -12,7 +12,6 @@ import io.restassured.http.ContentType;
 public class PatchDataTest {
     @Test
     public void updateData(){
-        baseURI = "https://reqres.in/api/";
 
         JSONObject jsonPatchData = new JSONObject();
         jsonPatchData.put("name", "Mixer Grinder");
@@ -23,7 +22,7 @@ public class PatchDataTest {
             .contentType(ContentType.JSON)
             .body(jsonPatchData.toJSONString())
         .when()
-            .patch("users/2")
+            .patch(EnvironmentConfig.getBaseUri() + "users/2")
         .then()
             .statusCode(200).log().all();
     }

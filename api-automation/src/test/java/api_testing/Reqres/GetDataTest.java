@@ -19,7 +19,8 @@ public class GetDataTest {
         // Response usersList = RestAssured.get("https://reqres.in/api/users?page=2");
 
         // Fluent way to Stores the response
-        Response usersList = (Response) given()
+        Response usersList = (Response) 
+            given()
                 .header("x-api-key", EnvironmentConfig.getReqresApiKey())
                 .when().get("https://reqres.in/api/users?page=2");
 
@@ -40,23 +41,28 @@ public class GetDataTest {
     }
     @Test
     public void getSingleUser(){
-        //To stop redundent website link
-        baseURI = "https://reqres.in/api/";
 
         //Validates the status code
-        given().header("x-api-key", EnvironmentConfig.getReqresApiKey()).get("users/2")
-        .then().statusCode(200);
+        given()
+            .header("x-api-key", EnvironmentConfig.getReqresApiKey())
+            .get(EnvironmentConfig.getBaseUri() + "users/2")
+        .then()
+            .statusCode(200);
 
         //Validate the first_name of the user and getting all the logs
-        given().header("x-api-key", EnvironmentConfig.getReqresApiKey()).get("users/2")
-        .then().body("data.first_name", equalTo("Janet")).log().all();
+        given()
+            .header("x-api-key", EnvironmentConfig.getReqresApiKey())
+            .get(EnvironmentConfig.getBaseUri() + "users/2")
+        .then()
+            .body("data.first_name", equalTo("Janet")).log().all();
 
     }
     @Test
     public void getListResources(){
         baseURI = "https://reqres.in/api/";
         given()
-            .header("x-api-key", EnvironmentConfig.getReqresApiKey()).get("unknown")
+            .header("x-api-key", EnvironmentConfig.getReqresApiKey())
+            .get(EnvironmentConfig.getBaseUri() + "unknown")
         .then()
             .body("data[0].name", equalTo("cerulean"));
             

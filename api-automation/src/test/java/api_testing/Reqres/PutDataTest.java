@@ -1,6 +1,6 @@
 package api_testing.Reqres;
 
-import static io.restassured.RestAssured.baseURI;
+
 import static io.restassured.RestAssured.given;
 import org.json.simple.JSONObject;
 import org.testng.annotations.Test;
@@ -12,7 +12,6 @@ public class PutDataTest {
     @Test
     public void putUpdate(){
 
-        baseURI = "https://reqres.in/api/";
         JSONObject jsonPutData = new JSONObject();
         jsonPutData.put("name", "Rajweer");
         jsonPutData.put("job", "Engineer");
@@ -22,7 +21,7 @@ public class PutDataTest {
             .contentType(ContentType.JSON)
             .body(jsonPutData.toJSONString())
         .when()
-            .put("users/2")
+            .put(EnvironmentConfig.getBaseUri() + "users/2")
         .then()
             .statusCode(200).log().all();
 

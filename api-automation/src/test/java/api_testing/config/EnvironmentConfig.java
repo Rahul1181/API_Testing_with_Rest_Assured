@@ -1,18 +1,30 @@
 package api_testing.config;
 
+import java.io.FileInputStream;
+import java.util.Properties;
+
 public class EnvironmentConfig {
 
-    private static final String REQRES_API_KEY;
+    private static final Properties properties = new Properties();
 
     static {
-        REQRES_API_KEY = System.getenv("REQRES_API_KEY");
+        try {
+            String filePath =
+                "src/test/java/api_testing/config/config.properties";
 
-        if (REQRES_API_KEY == null || REQRES_API_KEY.isBlank()) {
-            throw new RuntimeException("REQRES_API_KEY environment variable not found");
+            FileInputStream fis = new FileInputStream(filePath);
+            properties.load(fis);
+
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to load config.properties", e);
         }
     }
 
     public static String getReqresApiKey() {
-        return REQRES_API_KEY;
+        return properties.getProperty("reqres.api.key");
+    }
+
+    public static String getBaseUri() {
+        return properties.getProperty("base.uri");
     }
 }
