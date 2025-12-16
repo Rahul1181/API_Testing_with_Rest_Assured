@@ -17,7 +17,7 @@ public class httpMethodAction {
         baseURI = "http://localhost:3000/";
     }
 
-    @Test
+    @Test(priority = 1)
     public void getUserData() {
         when()
             .get("users")
@@ -25,14 +25,14 @@ public class httpMethodAction {
             .statusCode(200).log().body();
     }
 
-    @Test
+    @Test(priority = 2)
     public void postUserData() {
         JSONObject addUserData = new JSONObject();
-        addUserData.put("id", 5);
-        addUserData.put("firstname", "Jadish");
+        addUserData.put("id", 4);
+        addUserData.put("firstname", "Monnu");
         addUserData.put("lastname", "Shah");
-        addUserData.put("Address", "Chennai");
-        addUserData.put("job", "Home Designer");
+        addUserData.put("Address", "Delhi");
+        addUserData.put("job", "Dressing Designer");
 
         given()
             .contentType(ContentType.JSON)
@@ -44,11 +44,11 @@ public class httpMethodAction {
 
     }
 
-    @Test
+    @Test(priority = 3)
     public void putProfileData() {
         JSONObject updateProfile = new JSONObject();
-        updateProfile.put("name", "My Server");
-        updateProfile.put("country", "India");
+        updateProfile.put("name", "Pune Service Cost Center");
+        updateProfile.put("country", "USA");
 
         given()
             .contentType(ContentType.JSON)
@@ -60,12 +60,12 @@ public class httpMethodAction {
 
     }
 
-    @Test
+    @Test(priority = 4)
     public void patchComments() {
         JSONObject patchComments = new JSONObject();
-        patchComments.put("body", "Welcome to the new Server");
-        patchComments.put("postId", "ab7589");
-        patchComments.put("postCode", 826475);
+        patchComments.put("body", "Welcome to our Pune Cost Service center");
+        patchComments.put("postId", "ab1580");
+        patchComments.put("postCode", 826791);
 
         given()
             .contentType(ContentType.JSON)
@@ -77,7 +77,7 @@ public class httpMethodAction {
 
     }
 
-    @Test
+    @Test(priority = 5)
     public void deleteUserData() {
 
         //When you delete from JSON server you will get status code 200 Ok
