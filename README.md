@@ -76,7 +76,7 @@ This is critical when:
 |Additional fields      | Optional / forbidden  |
 
 3. Setup: 
-- Goto : [JSON Schema Genrator](https://www.liquid-technologies.com/online-json-to-schema-converter)
+- Goto : [JSON to JSON Schema Converter](https://www.liquid-technologies.com/online-json-to-schema-converter)
 - Goto: [Reqres](https://reqres.in/) and copy one of the JSON response
 - Paste the response in JSON schema generator
 - Goto target/classes and paste the code in schemaUserData.json (This is adding JSON FILE IN CLASSPATH)
