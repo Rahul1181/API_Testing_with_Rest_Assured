@@ -51,6 +51,39 @@
 - Copy and paste the local host URL: `http://localhost:3000/`
 - Now run and enjoy
 
+## Setup JSON Schema Validation
+1. Why do we need to JSON Schema Validation?
+Ans: JSON Schema testing ensures that the API response structure (contract) is correct and stable, independent of the actual data values.
+It checks:
+    - Missing fields
+    - Renamed fields
+    - Wrong data types 
+    - Unexpected structure changes
+This is critical when:
+    - Data is dynamic
+    - IDs and timestamps change every run
+
+2. What JSON Schema Validation Checks ?
+
+|Check                  |  Example              |
+|---|---|
+|Field existence	    | id must exist         |
+|Data type              | id must be integer    |
+|Required fields        | name, email           |
+|Array vs object        | users must be array   |
+|Nested structure       | address.city          |
+|Enum values	        | status ∈ [active, inactive] |
+|Additional fields      | Optional / forbidden  |
+
+3. Setup: 
+- Goto : [JSON Schema Genrator](https://www.liquid-technologies.com/online-json-to-schema-converter)
+- Goto: [Reqres](https://reqres.in/) and copy one of the JSON response
+- Paste the response in JSON schema generator
+- Goto target/classes and paste the code in schemaUserData.json (This is adding JSON FILE IN CLASSPATH)
+- Get the [JSON schema Validator Repo](https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator) and paste in POM file
+- Run the code `JsonSchemaValidator.java`
+
+
 
 
 
