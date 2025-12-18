@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:wsdl=\"http://wsdl.example.org/\">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <wsdl:Add>
+         <intA>50</intA>
+         <intB>5</intB>
+      </wsdl:Add>
+   </soapenv:Body>
+</soapenv:Envelope>
