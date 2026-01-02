@@ -83,6 +83,13 @@ This is critical when:
 - Get the [JSON schema Validator Repo](https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator) and paste in POM file
 - Run the code `JsonSchemaValidator.java`
 
+## Points to Remember
+- https://api.example.com/users?id=10
+    - https: **Scheme**
+    - api.example.com: **Host**
+    - /users: **Resource Path**
+    - id=10: **Query String**
+
 
 
 

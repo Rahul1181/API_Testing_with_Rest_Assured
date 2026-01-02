@@ -10,7 +10,7 @@ public class EnvironmentConfig {
     static {
         try {
             String filePath =
-                "src/test/java/api_testing/config/config.properties";
+                "src/test/java/api_testing/config/config.properties";  //You won't find the config.properties file as it contains the API key, which is sensitive dat,a and you have to create your own 
 
             FileInputStream fis = new FileInputStream(filePath);
             properties.load(fis);
